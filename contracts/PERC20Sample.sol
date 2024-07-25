@@ -41,7 +41,7 @@ contract PERC20Sample is PERC20 {
     }
 
     function mint() public {
-        _mint(msg.sender, 100*10**18);
+        _mint(msg.sender, 10000*10**18);
     }
 
     
