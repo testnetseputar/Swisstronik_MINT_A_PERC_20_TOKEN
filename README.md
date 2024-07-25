@@ -1,4 +1,4 @@
-### Tutorial Cara Mengerjakan Misi Swisstronik Ke 3 (Mint a ERC-721 Token)
+### Tutorial Cara Mengerjakan Misi Swisstronik Ke 4 (Mint a PRC-20 Token)
 
 ## REMINDER
 
