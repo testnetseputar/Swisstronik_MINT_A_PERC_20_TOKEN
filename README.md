@@ -1,34 +1,24 @@
-# Swisstronik Tesnet Techinal Task 4 (Mint a PERC20 Token)
+### Tutorial Cara Mengerjakan Misi Swisstronik Ke 3 (Mint a ERC-721 Token)
 
-link : [Click!](https://www.swisstronik.com/testnet2/dashboard)
+Sebelumnya Saya Ingatkan Untuk Menggunakan New Wallet, Terserah Masing - Masing, ini Hanya Saran.
+Tutorial Yang Saya Berikan Adalah Kumpulan Dari Berbagai Sumber Yang Sudah Saya Rangkum Agar Lebih Mudah Di Pahami Bagi Mereka Yang Mau Mengerjakan ( DYOR )
 
-Feel free donate to my EVM address
+Untuk Link Misinya Ada Disini : [Click!](https://www.swisstronik.com/testnet2/dashboard)
 
-EVM :
+## IKUTI LANGKAH DEMI LANGKAH
 
-```bash
-0x9902C3A98Df4b240ad5496cC26F89bAb8058f4aE
-```
+### 1. Copy Paste Link Di Bawah ini Ke Gitpod ( Diawali Https Tanpa Ada Huruf Git Clone )
 
-## Steps
-
-### 1. Clone Repository
 
 ```bash
-git clone https://github.com/Mnuralim/swisstronik-perc20-mint-token.git
+git clone 
 ```
 
 ```
 cd swisstronik-perc20-mint-token
 ```
 
-### 2. Install Dependency
-
-```bash
-npm install
-```
-
-### 3. Set .env File
+### 2. Tambahkan File .env Lalu Kemudian Masukkan Private Key Wallet Kalian Yang Sudah Kalian Buat
 
 create .env file in root project
 
@@ -36,47 +26,95 @@ create .env file in root project
 PRIVATE_KEY="your private key"
 ```
 
-### 4. Update Smart Contract (Skipp if you won't modify Token name)
+### 3. Edit NFT Yang Akan Kalian Buat
 
-- Open contracts folder
-- Open PERC20Sample.sol file
-- Feel free to modify token name and token symbol
+- Buka Menu Contracts
+- Buka File PERC20Sample.sol
+- Silahkan Ubah Nama Dan Symbol Seperti Yang Kalian Inginkan
 
-### 5. Compile Smart Contract
+```bash
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "./PERC20.sol";
+
+/**
+ * @dev Sample implementation of the {PERC20} contract.
+ */
+contract PERC20Sample is PERC20 {
+    constructor() PERC20("Percobaan", "PRC") {}
+
+    /// @dev Wraps SWTR to PSWTR.
+    receive() external payable {
+        _mint(_msgSender(), msg.value);
+    }
+
+    /**
+     * @dev Regular `balanceOf` function marked as internal, so we override it to extend visibility  
+     */ 
+    function balanceOf(address account) public view override returns (uint256) {
+        // This function should be called by EOA using signed `eth_call` to make EVM able to
+        // extract original sender of this request. In case of regular (non-signed) `eth_call`
+        // msg.sender will be empty address (0x0000000000000000000000000000000000000000).
+        require(msg.sender == account, "PERC20Sample: msg.sender != account");
+
+        // If msg.sender is correct we return the balance
+        return _balances[account];
+    }
+
+    /**
+     * @dev Regular `allowance` function marked as internal, so we override it to extend visibility  
+     */
+    function allowance(address owner, address spender) public view virtual override returns (uint256) {
+        // This function should be called by EOA using signed `eth_call` to make EVM able to
+        // extract original sender of this request. In case of regular (non-signed) `eth_call`
+        // msg.sender will be empty address (0x0000000000000000000000000000000000000000)
+        require(msg.sender == spender, "PERC20Sample: msg.sender != account");
+        
+        // If msg.sender is correct we return the allowance
+        return _allowances[owner][spender];
+    }
+
+    function mint() public {
+        _mint(msg.sender, 10000*10**18);
+    }
+
+  }  
+```
+
+### 4. Compile Smart Contract
 
 ```bash
 npm run compile
 ```
 
-### 6. Deploy Smart Contract
+### 5. Deploy Smart Contract
 
 ```bash
 npm run deploy
 ```
 
-### 7. Mint Token
+### 6. Mint Token
 
 ```bash
 npm run mint
 ```
 
-### 8. Transfer Token
+### 7. Transfer Token
 
 ```bash
 npm run transfer
 ```
 
-### 8. Finsihed
+### 8. Selesai Dan Kalian Tinggal Copy Paste Misi Yang Sudah Dikerjakan
 
-- Open the deployed-adddress.ts (location in utils folder)
-- Copy the address and paste the address into testnet dashboard
-- Open the tx-hash.txt (location in utils folder)
-- Copy the address and paste the tx hash link into testnet dashboard
-- push this project to your github and paste your repository link in testnet dashboard
+ Selesai Dan Kalian Tinggal Copy Paste Misi Yang Sudah Dikerjakan
 
-by :
-github : [Mnuralim](https://github.com/Mnuralim)
-twitter : @Izzycracker04
-telegram : @fitriay19
+- Buka Menu deployed-adddress.ts Untuk Misi Kontrak Pintar
+- Buka Menu tx-hash.txt Untuk Mengetahui TX Hash
+- Lalu Tinggal Copy Paste Ke Halaman Swisstronik Testnet 3
 
-0xCd825ae0335190f4c8882DF16FB0577d478b3898
+Untuk Link Misinya Ada Disini : [Click!](https://www.swisstronik.com/testnet2/dashboard)
+
+
+### Terimakasih Dan Semoga Bermanfaat
