@@ -1,11 +1,13 @@
 ### Tutorial Cara Mengerjakan Misi Swisstronik Ke 3 (Mint a ERC-721 Token)
 
+## REMINDER
+
 Sebelumnya Saya Ingatkan Untuk Menggunakan New Wallet, Terserah Masing - Masing, ini Hanya Saran.
 Tutorial Yang Saya Berikan Adalah Kumpulan Dari Berbagai Sumber Yang Sudah Saya Rangkum Agar Lebih Mudah Di Pahami Bagi Mereka Yang Mau Mengerjakan ( DYOR )
 
 Untuk Link Misinya Ada Disini : [Click!](https://www.swisstronik.com/testnet2/dashboard)
 
-## IKUTI LANGKAH DEMI LANGKAH
+## Ikuti Langkah Demi Langkah
 
 ### 1. Copy Paste Link Di Bawah ini Ke Gitpod ( Diawali Https Tanpa Ada Huruf Git Clone )
 
