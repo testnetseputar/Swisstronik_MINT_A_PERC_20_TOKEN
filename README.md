@@ -1,6 +1,6 @@
 ### Tutorial Cara Mengerjakan Misi Swisstronik Ke 4 (Mint a PERC-20 Token)
 
-## REMINDER
+## REMINDER !
 
 Sebelumnya Saya Ingatkan Untuk Menggunakan New Wallet, Terserah Masing - Masing, ini Hanya Saran.
 Tutorial Yang Saya Berikan Adalah Kumpulan Dari Berbagai Sumber Yang Sudah Saya Rangkum Agar Lebih Mudah Di Pahami Bagi Mereka Yang Mau Mengerjakan ( DYOR )
