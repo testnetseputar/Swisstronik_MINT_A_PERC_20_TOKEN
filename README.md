@@ -1,4 +1,4 @@
-### Tutorial Cara Mengerjakan Misi Swisstronik Ke 4 (Mint a PRC-20 Token)
+### Tutorial Cara Mengerjakan Misi Swisstronik Ke 4 (Mint a PERC-20 Token)
 
 ## REMINDER
 
