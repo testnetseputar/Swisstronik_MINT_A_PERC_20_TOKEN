@@ -13,7 +13,7 @@ Untuk Link Misinya Ada Disini : [Click!](https://www.swisstronik.com/testnet2/da
 
 
 ```bash
-git clone https://github.com/seputartestnet/Swisstronik4
+git clone https://github.com/shukakuairdrop/Swisstronik_Task4
 ```
 
 ```
